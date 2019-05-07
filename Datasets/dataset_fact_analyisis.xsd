@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="dataset">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="record">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="PacientFirstName" type="xs:string" />
+              <xs:element minOccurs="0" name="PacientLastName" type="xs:string" />
+              <xs:element minOccurs="0" name="PacientSSN" type="xs:string" />
+              <xs:element minOccurs="0" name="PacientBirthDate" type="xs:string" />
+              <xs:element minOccurs="0" name="PacientCountry" type="xs:string" />
+              <xs:element minOccurs="0" name="PacientCity" type="xs:string" />
+              <xs:element minOccurs="0" name="PacientStreetName" type="xs:string" />
+              <xs:element minOccurs="0" name="PacientAddressNr" type="xs:unsignedInt" />
+              <xs:element minOccurs="0" name="PacientAddressZipCode" type="xs:string" />
+              <xs:element minOccurs="0" name="PacientEmail" type="xs:string" />
+              <xs:element minOccurs="0" name="PacientPhoneNumber" type="xs:unsignedLong" />
+              <xs:element minOccurs="0" name="PacientGender" type="xs:string" />
+              <xs:element minOccurs="0" name="PacientJob" type="xs:string" />
+              <xs:element minOccurs="0" name="DietitianFirstName" type="xs:string" />
+              <xs:element minOccurs="0" name="DietitianLastName" type="xs:string" />
+              <xs:element minOccurs="0" name="DietitianSSN" type="xs:string" />
+              <xs:element minOccurs="0" name="DietitianBirthDate" type="xs:string" />
+              <xs:element minOccurs="0" name="DietitianCountry" type="xs:string" />
+              <xs:element minOccurs="0" name="DietitianCity" type="xs:string" />
+              <xs:element minOccurs="0" name="DietitianStreetName" type="xs:string" />
+              <xs:element minOccurs="0" name="DietitianAddressNr" type="xs:unsignedInt" />
+              <xs:element minOccurs="0" name="DietitianAddressZipCode" type="xs:string" />
+              <xs:element minOccurs="0" name="DietitianEmail" type="xs:string" />
+              <xs:element minOccurs="0" name="DietitanPhoneNr" type="xs:unsignedLong" />
+              <xs:element minOccurs="0" name="DietitianGender" type="xs:string" />
+              <xs:element minOccurs="0" name="DietitianActivityStartDate" type="xs:string" />
+              <xs:element minOccurs="0" name="DietitianTitle" type="xs:string" />
+              <xs:element minOccurs="0" name="DietitianExperienceYears" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="LocationAddressCountry" type="xs:string" />
+              <xs:element minOccurs="0" name="LocationAddressCity" type="xs:string" />
+              <xs:element minOccurs="0" name="LocationAddressStreet" type="xs:string" />
+              <xs:element minOccurs="0" name="LocationAddressNr" type="xs:unsignedInt" />
+              <xs:element minOccurs="0" name="LocationAddressZipCode" type="xs:string" />
+              <xs:element minOccurs="0" name="LocationPhone" type="xs:unsignedLong" />
+              <xs:element minOccurs="0" name="LocationParking" type="xs:boolean" />
+              <xs:element minOccurs="0" name="AnalysisWeight" type="xs:decimal" />
+              <xs:element minOccurs="0" name="AnalysisHeight" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="AnalysisBodyFatPercentage" type="xs:decimal" />
+              <xs:element minOccurs="0" name="AnalysisLeanMuscleMassPercentage" type="xs:decimal" />
+              <xs:element minOccurs="0" name="AnalysisBoneMassPercentage" type="xs:decimal" />
+              <xs:element minOccurs="0" name="AnalysisMetabolicAge" type="xs:unsignedByte" />
+              <xs:element minOccurs="0" name="AnalysisActivityLevel" type="xs:unsignedByte" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
