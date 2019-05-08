@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="104"
-  DTS:VersionGUID="{65A22513-E676-4AAF-B8E8-17645DF489F2}">
+  DTS:VersionBuild="106"
+  DTS:VersionGUID="{36E7757D-92B3-484E-9D7E-FE7908EEDBF1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23968,6 +23968,532 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Generate Date Dim"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{70174F9F-9187-4735-BE93-D1EBC4494947}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Generate Date Dim"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Generate Date Dim\DimDate"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DimDate"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[DimDate]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Generate Date Dim\DimDate.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.ProiectBI]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.ProiectBI]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].Columns[DateNum]"
+                      cachedDataType="r8"
+                      cachedName="DateNum"
+                      externalMetadataColumnId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].ExternalColumns[DateNum]"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[DateNum]" />
+                    <inputColumn
+                      refId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].Columns[Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].Columns[DayName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DayName"
+                      externalMetadataColumnId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].ExternalColumns[DayName]"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[DayName]" />
+                    <inputColumn
+                      refId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].Columns[MonthName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MonthName"
+                      externalMetadataColumnId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].ExternalColumns[MonthName]"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[MonthName]" />
+                    <inputColumn
+                      refId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].Columns[Year]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Year"
+                      externalMetadataColumnId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[Year]" />
+                    <inputColumn
+                      refId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].Columns[DayNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DayNumber"
+                      externalMetadataColumnId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].ExternalColumns[DayNumber]"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[DayNumber]" />
+                    <inputColumn
+                      refId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].Columns[MonthNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MonthNumber"
+                      externalMetadataColumnId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].ExternalColumns[MonthNumber]"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[MonthNumber]" />
+                    <inputColumn
+                      refId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].Columns[WeekNumber]"
+                      cachedDataType="i4"
+                      cachedName="WeekNumber"
+                      externalMetadataColumnId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].ExternalColumns[WeekNumber]"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[WeekNumber]" />
+                    <inputColumn
+                      refId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].Columns[QuarterNumber]"
+                      cachedDataType="i4"
+                      cachedName="QuarterNumber"
+                      externalMetadataColumnId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].ExternalColumns[QuarterNumber]"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[QuarterNumber]" />
+                    <inputColumn
+                      refId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].Columns[QuarterName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="QuarterName"
+                      externalMetadataColumnId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].ExternalColumns[QuarterName]"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[QuarterName]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].ExternalColumns[DateNum]"
+                      dataType="r8"
+                      name="DateNum" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      dataType="dbDate"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].ExternalColumns[DayName]"
+                      dataType="wstr"
+                      length="255"
+                      name="DayName" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].ExternalColumns[MonthName]"
+                      dataType="wstr"
+                      length="255"
+                      name="MonthName" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                      dataType="wstr"
+                      length="255"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].ExternalColumns[DayNumber]"
+                      dataType="wstr"
+                      length="255"
+                      name="DayNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].ExternalColumns[MonthNumber]"
+                      dataType="wstr"
+                      length="255"
+                      name="MonthNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].ExternalColumns[WeekNumber]"
+                      dataType="i4"
+                      name="WeekNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].ExternalColumns[QuarterNumber]"
+                      dataType="i4"
+                      name="QuarterNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input].ExternalColumns[QuarterName]"
+                      dataType="wstr"
+                      length="255"
+                      name="QuarterName" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Generate Date Dim\DimDate.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Generate Date Dim\DimDate.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Generate Date Dim\DimDate.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Generate Date Dim\DimDate.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Generate Date Dim\DimDate.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Generate Date Dim\Homemade DateDimension"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Homemade DateDimension"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from dbo.createDimTable()</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Generate Date Dim\Homemade DateDimension.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.ProiectBI]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.ProiectBI]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[DateNum]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].ExternalColumns[DateNum]"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[DateNum]"
+                      name="DateNum"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[Date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].ExternalColumns[Date]"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[Date]"
+                      name="Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[DayName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].ExternalColumns[DayName]"
+                      length="255"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[DayName]"
+                      name="DayName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[MonthName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].ExternalColumns[MonthName]"
+                      length="255"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[MonthName]"
+                      name="MonthName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[Year]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].ExternalColumns[Year]"
+                      length="255"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[Year]"
+                      name="Year"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[DayNumber]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].ExternalColumns[DayNumber]"
+                      length="255"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[DayNumber]"
+                      name="DayNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[MonthNumber]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].ExternalColumns[MonthNumber]"
+                      length="255"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[MonthNumber]"
+                      name="MonthNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[WeekNumber]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].ExternalColumns[WeekNumber]"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[WeekNumber]"
+                      name="WeekNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[QuarterNumber]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].ExternalColumns[QuarterNumber]"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[QuarterNumber]"
+                      name="QuarterNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[QuarterName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].ExternalColumns[QuarterName]"
+                      length="255"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].Columns[QuarterName]"
+                      name="QuarterName"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].ExternalColumns[DateNum]"
+                      dataType="r8"
+                      name="DateNum" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].ExternalColumns[Date]"
+                      dataType="dbDate"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].ExternalColumns[DayName]"
+                      dataType="wstr"
+                      length="255"
+                      name="DayName" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].ExternalColumns[MonthName]"
+                      dataType="wstr"
+                      length="255"
+                      name="MonthName" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].ExternalColumns[Year]"
+                      dataType="wstr"
+                      length="255"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].ExternalColumns[DayNumber]"
+                      dataType="wstr"
+                      length="255"
+                      name="DayNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].ExternalColumns[MonthNumber]"
+                      dataType="wstr"
+                      length="255"
+                      name="MonthNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].ExternalColumns[WeekNumber]"
+                      dataType="i4"
+                      name="WeekNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].ExternalColumns[QuarterNumber]"
+                      dataType="i4"
+                      name="QuarterNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output].ExternalColumns[QuarterName]"
+                      dataType="wstr"
+                      length="255"
+                      name="QuarterName" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output].Columns[DateNum]"
+                      dataType="r8"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output].Columns[DateNum]"
+                      name="DateNum" />
+                    <outputColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output].Columns[Date]"
+                      dataType="dbDate"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output].Columns[Date]"
+                      name="Date" />
+                    <outputColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output].Columns[DayName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output].Columns[DayName]"
+                      name="DayName" />
+                    <outputColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output].Columns[MonthName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output].Columns[MonthName]"
+                      name="MonthName" />
+                    <outputColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output].Columns[Year]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output].Columns[Year]"
+                      name="Year" />
+                    <outputColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output].Columns[DayNumber]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output].Columns[DayNumber]"
+                      name="DayNumber" />
+                    <outputColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output].Columns[MonthNumber]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output].Columns[MonthNumber]"
+                      name="MonthNumber" />
+                    <outputColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output].Columns[WeekNumber]"
+                      dataType="i4"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output].Columns[WeekNumber]"
+                      name="WeekNumber" />
+                    <outputColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output].Columns[QuarterNumber]"
+                      dataType="i4"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output].Columns[QuarterNumber]"
+                      name="QuarterNumber" />
+                    <outputColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output].Columns[QuarterName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output].Columns[QuarterName]"
+                      name="QuarterName" />
+                    <outputColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Generate Date Dim.Paths[OLE DB Source Output]"
+              endId="Package\Generate Date Dim\DimDate.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Generate Date Dim\Homemade DateDimension.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Populate Analysis"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
@@ -34516,6 +35042,22 @@ where [refTable].[BuissnessId] = ?</property>
       DTS:ObjectName="Constraint 11"
       DTS:To="Package\Populate Results" />
     <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 12]"
+      DTS:CreationName=""
+      DTS:DTSID="{46E4B5EE-A756-4994-B522-15F123D31526}"
+      DTS:From="Package\Generate Date Dim"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 12"
+      DTS:To="Package\Populate Results" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 13]"
+      DTS:CreationName=""
+      DTS:DTSID="{472252BD-558E-4CE1-9163-CFF631BB4BCE}"
+      DTS:From="Package\Generate Date Dim"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 13"
+      DTS:To="Package\Create fact table Analysiss" />
+    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
       DTS:DTSID="{66464197-56EE-4C60-AE86-26561BB5478F}"
@@ -34548,14 +35090,6 @@ where [refTable].[BuissnessId] = ?</property>
       DTS:ObjectName="Constraint 5"
       DTS:To="Package\Create fact table Analysiss" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
-      DTS:CreationName=""
-      DTS:DTSID="{53A77E61-CB07-4386-97A2-0C8B9E01A8A2}"
-      DTS:From="Package\Create Date Dimension"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 6"
-      DTS:To="Package\Create fact table Analysiss" />
-    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
       DTS:DTSID="{94F45639-DAA7-4F28-A47C-28A5433BF4F0}"
@@ -34571,14 +35105,6 @@ where [refTable].[BuissnessId] = ?</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 8"
       DTS:To="Package\Populate Results" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
-      DTS:CreationName=""
-      DTS:DTSID="{9EC4CE31-F16E-4C7E-91D9-0BA7F79661F6}"
-      DTS:From="Package\Create Date Dimension"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 9"
-      DTS:To="Package\Populate Results" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -34593,21 +35119,21 @@ where [refTable].[BuissnessId] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="187,42"
+          Size="141,42"
           Id="Package\Create Date Dimension"
-          TopLeft="1174,154" />
+          TopLeft="1263,147" />
         <NodeLayout
           Size="178,42"
           Id="Package\Create Dietitian table"
-          TopLeft="609,101" />
+          TopLeft="477,101" />
         <NodeLayout
           Size="203,42"
           Id="Package\Create fact table Analysiss"
-          TopLeft="788,436" />
+          TopLeft="656,436" />
         <NodeLayout
           Size="172,42"
           Id="Package\Create Patient table"
-          TopLeft="305,96" />
+          TopLeft="173,96" />
         <NodeLayout
           Size="185,42"
           Id="Package\Create Plan Dimension"
@@ -34615,19 +35141,19 @@ where [refTable].[BuissnessId] = ?</property>
         <NodeLayout
           Size="184,42"
           Id="Package\Create Slowly Canging"
-          TopLeft="608,195" />
+          TopLeft="476,195" />
         <NodeLayout
           Size="190,42"
           Id="Package\Create Slowly Changing"
-          TopLeft="294,194" />
+          TopLeft="162,194" />
         <NodeLayout
           Size="181,42"
           Id="Package\Create Table Location"
-          TopLeft="913,103" />
+          TopLeft="781,103" />
         <NodeLayout
           Size="161,42"
           Id="Package\Populate Analysis"
-          TopLeft="809,533" />
+          TopLeft="677,533" />
         <NodeLayout
           Size="157,42"
           Id="Package\Populate Results"
@@ -34635,10 +35161,10 @@ where [refTable].[BuissnessId] = ?</property>
         <NodeLayout
           Size="156,42"
           Id="Package\Slowly Changing"
-          TopLeft="927,202" />
+          TopLeft="795,202" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="390,138">
+          TopLeft="258,138">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -34660,7 +35186,7 @@ where [refTable].[BuissnessId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="699,143">
+          TopLeft="567,143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -34682,13 +35208,13 @@ where [refTable].[BuissnessId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="419.333333333333,236">
+          TopLeft="287.333333333333,236">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="880.466666666667,293"
+              EndConnector="1012.46666666667,293"
               Start="0,0"
-              End="880.466666666667,285.5">
+              End="1012.46666666667,285.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -34699,13 +35225,13 @@ where [refTable].[BuissnessId] = ?</property>
                     Point2="0,179.474579679833"
                     Point3="4,179.474579679833" />
                   <mssgle:LineSegment
-                    End="876.466666666667,179.474579679833" />
+                    End="1008.46666666667,179.474579679833" />
                   <mssgle:CubicBezierSegment
-                    Point1="876.466666666667,179.474579679833"
-                    Point2="880.466666666667,179.474579679833"
-                    Point3="880.466666666667,183.474579679833" />
+                    Point1="1008.46666666667,179.474579679833"
+                    Point2="1012.46666666667,179.474579679833"
+                    Point3="1012.46666666667,183.474579679833" />
                   <mssgle:LineSegment
-                    End="880.466666666667,285.5" />
+                    End="1012.46666666667,285.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -34716,13 +35242,13 @@ where [refTable].[BuissnessId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 11]"
-          TopLeft="729.333333333333,237">
+          TopLeft="597.333333333333,237">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="600.266666666667,292"
+              EndConnector="732.266666666667,292"
               Start="0,0"
-              End="600.266666666667,284.5">
+              End="732.266666666667,284.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -34733,13 +35259,13 @@ where [refTable].[BuissnessId] = ?</property>
                     Point2="0,133.368078337192"
                     Point3="4,133.368078337192" />
                   <mssgle:LineSegment
-                    End="596.266666666667,133.368078337192" />
+                    End="728.266666666667,133.368078337192" />
                   <mssgle:CubicBezierSegment
-                    Point1="596.266666666667,133.368078337192"
-                    Point2="600.266666666667,133.368078337192"
-                    Point3="600.266666666667,137.368078337192" />
+                    Point1="728.266666666667,133.368078337192"
+                    Point2="732.266666666667,133.368078337192"
+                    Point3="732.266666666667,137.368078337192" />
                   <mssgle:LineSegment
-                    End="600.266666666667,284.5" />
+                    End="732.266666666667,284.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -34750,7 +35276,7 @@ where [refTable].[BuissnessId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="1004.25,145">
+          TopLeft="872.25,145">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -34772,7 +35298,7 @@ where [refTable].[BuissnessId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="389,236">
+          TopLeft="257,236">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -34806,7 +35332,7 @@ where [refTable].[BuissnessId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="700,237">
+          TopLeft="568,237">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -34840,7 +35366,7 @@ where [refTable].[BuissnessId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="1005,244">
+          TopLeft="873,244">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -34873,42 +35399,8 @@ where [refTable].[BuissnessId] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="1267.5,196">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-319.5,240"
-              Start="0,0"
-              End="-319.5,232.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,164.581314878893" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,164.581314878893"
-                    Point2="0,168.581314878893"
-                    Point3="-4,168.581314878893" />
-                  <mssgle:LineSegment
-                    End="-315.5,168.581314878893" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-315.5,168.581314878893"
-                    Point2="-319.5,168.581314878893"
-                    Point3="-319.5,172.581314878893" />
-                  <mssgle:LineSegment
-                    End="-319.5,232.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="889.5,478">
+          TopLeft="757.5,478">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -34962,32 +35454,70 @@ where [refTable].[BuissnessId] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Generate Date Dim"
+          TopLeft="1044,146" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="1297.33333333333,196">
+          Id="Package.PrecedenceConstraints[Constraint 12]"
+          TopLeft="1155.33333333333,188">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="62.0666666666668,333"
+              EndConnector="204.066666666667,341"
               Start="0,0"
-              End="62.0666666666668,325.5">
+              End="204.066666666667,333.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,148.066210219503" />
+                    End="0,151.907986035128" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,148.066210219503"
-                    Point2="0,152.066210219503"
-                    Point3="4,152.066210219503" />
+                    Point1="0,151.907986035128"
+                    Point2="0,155.907986035128"
+                    Point3="4,155.907986035128" />
                   <mssgle:LineSegment
-                    End="58.0666666666668,152.066210219503" />
+                    End="200.066666666667,155.907986035128" />
                   <mssgle:CubicBezierSegment
-                    Point1="58.0666666666668,152.066210219503"
-                    Point2="62.0666666666668,152.066210219503"
-                    Point3="62.0666666666668,156.066210219503" />
+                    Point1="200.066666666667,155.907986035128"
+                    Point2="204.066666666667,155.907986035128"
+                    Point3="204.066666666667,159.907986035128" />
                   <mssgle:LineSegment
-                    End="62.0666666666668,325.5" />
+                    End="204.066666666667,333.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 13]"
+          TopLeft="1101.66666666667,188">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-285.666666666667,248"
+              Start="0,0"
+              End="-285.666666666667,240.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,149.013211524947" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,149.013211524947"
+                    Point2="0,153.013211524947"
+                    Point3="-4,153.013211524947" />
+                  <mssgle:LineSegment
+                    End="-281.666666666667,153.013211524947" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-281.666666666667,153.013211524947"
+                    Point2="-285.666666666667,153.013211524947"
+                    Point3="-285.666666666667,157.013211524947" />
+                  <mssgle:LineSegment
+                    End="-285.666666666667,240.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -35176,7 +35706,7 @@ where [refTable].[BuissnessId] = ?</property>
     design-time-name="Package\Create fact table Analysiss">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="134,42"
           Id="Package\Create fact table Analysiss\XML Source"
@@ -35204,9 +35734,7 @@ where [refTable].[BuissnessId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -37473,6 +38001,65 @@ where [refTable].[BuissnessId] = ?</property>
   &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
   &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Generate Date Dim">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="207,42"
+          Id="Package\Generate Date Dim\Homemade DateDimension"
+          TopLeft="727,113" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Generate Date Dim\DimDate"
+          TopLeft="768,269" />
+        <EdgeLayout
+          Id="Package\Generate Date Dim.Paths[OLE DB Source Output]"
+          TopLeft="829.25,155">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,114"
+              Start="0,0"
+              End="0,106.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,106.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Generate Date Dim\Homemade DateDimension">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Generate Date Dim\DimDate">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
