@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="106"
-  DTS:VersionGUID="{36E7757D-92B3-484E-9D7E-FE7908EEDBF1}">
+  DTS:VersionBuild="111"
+  DTS:VersionGUID="{35284CDA-8A01-4D3A-9A1F-DF9755478E40}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2683,1607 +2683,6 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Create fact table Analysiss"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{B8D9504D-3CD9-4FF4-9520-BAB414633A3E}"
-      DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Create fact table Analysiss"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\Create fact table Analysiss\OLE DB Destination"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="OLE DB Destination"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[FactTableAnalysis]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">3</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Create fact table Analysiss\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.ProiectBI]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.ProiectBI]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AnalysisWeight]"
-                      cachedDataType="decimal"
-                      cachedName="AnalysisWeight"
-                      cachedScale="10"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Weight]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[AnalysisWeight]" />
-                    <inputColumn
-                      refId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AnalysisHeight]"
-                      cachedDataType="ui1"
-                      cachedName="AnalysisHeight"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Height]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[AnalysisHeight]" />
-                    <inputColumn
-                      refId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AnalysisBodyFatPercentage]"
-                      cachedDataType="decimal"
-                      cachedName="AnalysisBodyFatPercentage"
-                      cachedScale="10"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VisceralFat]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[AnalysisBodyFatPercentage]" />
-                    <inputColumn
-                      refId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AnalysisLeanMuscleMassPercentage]"
-                      cachedDataType="decimal"
-                      cachedName="AnalysisLeanMuscleMassPercentage"
-                      cachedScale="10"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LeanMuscleMass]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[AnalysisLeanMuscleMassPercentage]" />
-                    <inputColumn
-                      refId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AnalysisBoneMassPercentage]"
-                      cachedDataType="decimal"
-                      cachedName="AnalysisBoneMassPercentage"
-                      cachedScale="10"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BoneMass]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[AnalysisBoneMassPercentage]" />
-                    <inputColumn
-                      refId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AnalysisMetabolicAge]"
-                      cachedDataType="ui1"
-                      cachedName="AnalysisMetabolicAge"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MetabolicAge]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[AnalysisMetabolicAge]" />
-                    <inputColumn
-                      refId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AnalysisActivityLevel]"
-                      cachedDataType="ui1"
-                      cachedName="AnalysisActivityLevel"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ActivityLevel]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[AnalysisActivityLevel]" />
-                    <inputColumn
-                      refId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PacientSSN]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="PacientSSN"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BuissnessID]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientSSN]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FactTableAnalysisId]"
-                      dataType="i4"
-                      name="FactTableAnalysisId" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IdDietitian]"
-                      dataType="i4"
-                      name="IdDietitian" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IdPatient]"
-                      dataType="i4"
-                      name="IdPatient" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IdLocation]"
-                      dataType="i4"
-                      name="IdLocation" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IdDate]"
-                      dataType="i4"
-                      name="IdDate" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Weight]"
-                      dataType="i4"
-                      name="Weight" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Height]"
-                      dataType="i4"
-                      name="Height" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VisceralFat]"
-                      dataType="i4"
-                      name="VisceralFat" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LeanMuscleMass]"
-                      dataType="i4"
-                      name="LeanMuscleMass" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BoneMass]"
-                      dataType="i4"
-                      name="BoneMass" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MetabolicAge]"
-                      dataType="i4"
-                      name="MetabolicAge" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ActivityLevel]"
-                      dataType="i4"
-                      name="ActivityLevel" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BuissnessID]"
-                      dataType="wstr"
-                      length="255"
-                      name="BuissnessID" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Create fact table Analysiss\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Create fact table Analysiss\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Create fact table Analysiss\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Create fact table Analysiss\XML Source"
-              componentClassID="Microsoft.ManagedComponentHost"
-              contactInfo="Extracts data from an XML file. For example, extract catalog data from an XML file that represents catalogs and catalog items. Before using, specify the schema and generate an output for each XML element.;Microsoft Corporation;Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-              description="Extracts data from an XML file. For example, extract catalog data from an XML file that represents catalogs and catalog items. Before using, specify the schema and generate an output for each XML element."
-              name="XML Source"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.String"
-                  name="UserComponentTypeName">Microsoft.XmlSourceAdapter</property>
-                <property
-                  dataType="System.String"
-                  description="The XML data used by the XML source adapter."
-                  expressionType="Notify"
-                  name="XMLData">C:\Users\Eduard\Desktop\Project BI\Datasets\dataset_fact_analyisis.xml</property>
-                <property
-                  dataType="System.String"
-                  description="The variable used by the XML source adapter to specify XML data."
-                  name="XMLDataVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Defines how the XML source adapter gets XML data."
-                  name="AccessMode">0</property>
-                <property
-                  dataType="System.String"
-                  description="The XML schema definition used by the XML source adapter."
-                  expressionType="Notify"
-                  name="XMLSchemaDefinition">C:\Users\Eduard\Desktop\Project BI\Datasets\dataset_fact_analyisis.xsd</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Identifies whether or not to use inline schema."
-                  name="UseInlineSchema">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Defines how XML integer types are mapped."
-                  name="XMLIntegerMapping"
-                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.XmlSourceAdapter+XMLIntegerMappingConverter">0</property>
-              </properties>
-              <outputs>
-                <output
-                  refId="Package\Create fact table Analysiss\XML Source.Outputs[record]"
-                  name="record">
-                  <properties>
-                    <property
-                      dataType="System.String"
-                      description="Identifies the rowset associated with the output."
-                      name="RowsetID">record</property>
-                  </properties>
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientFirstName]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientFirstName]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientFirstName]"
-                      name="PacientFirstName"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientLastName]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientLastName]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientLastName]"
-                      name="PacientLastName"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientSSN]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientSSN]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientSSN]"
-                      name="PacientSSN"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientBirthDate]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientBirthDate]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientBirthDate]"
-                      name="PacientBirthDate"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientCountry]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientCountry]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientCountry]"
-                      name="PacientCountry"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientCity]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientCity]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientCity]"
-                      name="PacientCity"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientStreetName]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientStreetName]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientStreetName]"
-                      name="PacientStreetName"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientAddressNr]"
-                      dataType="ui4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientAddressNr]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientAddressNr]"
-                      name="PacientAddressNr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientAddressZipCode]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientAddressZipCode]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientAddressZipCode]"
-                      name="PacientAddressZipCode"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientEmail]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientEmail]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientEmail]"
-                      name="PacientEmail"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientPhoneNumber]"
-                      dataType="ui8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientPhoneNumber]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientPhoneNumber]"
-                      name="PacientPhoneNumber"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientGender]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientGender]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientGender]"
-                      name="PacientGender"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientJob]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientJob]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[PacientJob]"
-                      name="PacientJob"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianFirstName]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianFirstName]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianFirstName]"
-                      name="DietitianFirstName"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianLastName]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianLastName]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianLastName]"
-                      name="DietitianLastName"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianSSN]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianSSN]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianSSN]"
-                      name="DietitianSSN"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianBirthDate]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianBirthDate]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianBirthDate]"
-                      name="DietitianBirthDate"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianCountry]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianCountry]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianCountry]"
-                      name="DietitianCountry"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianCity]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianCity]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianCity]"
-                      name="DietitianCity"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianStreetName]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianStreetName]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianStreetName]"
-                      name="DietitianStreetName"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianAddressNr]"
-                      dataType="ui4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianAddressNr]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianAddressNr]"
-                      name="DietitianAddressNr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianAddressZipCode]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianAddressZipCode]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianAddressZipCode]"
-                      name="DietitianAddressZipCode"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianEmail]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianEmail]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianEmail]"
-                      name="DietitianEmail"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitanPhoneNr]"
-                      dataType="ui8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitanPhoneNr]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitanPhoneNr]"
-                      name="DietitanPhoneNr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianGender]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianGender]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianGender]"
-                      name="DietitianGender"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianActivityStartDate]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianActivityStartDate]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianActivityStartDate]"
-                      name="DietitianActivityStartDate"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianTitle]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianTitle]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianTitle]"
-                      name="DietitianTitle"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianExperienceYears]"
-                      dataType="ui1"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianExperienceYears]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[DietitianExperienceYears]"
-                      name="DietitianExperienceYears"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[LocationAddressCountry]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[LocationAddressCountry]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[LocationAddressCountry]"
-                      name="LocationAddressCountry"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[LocationAddressCity]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[LocationAddressCity]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[LocationAddressCity]"
-                      name="LocationAddressCity"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[LocationAddressStreet]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[LocationAddressStreet]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[LocationAddressStreet]"
-                      name="LocationAddressStreet"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[LocationAddressNr]"
-                      dataType="ui4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[LocationAddressNr]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[LocationAddressNr]"
-                      name="LocationAddressNr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[LocationAddressZipCode]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[LocationAddressZipCode]"
-                      length="255"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[LocationAddressZipCode]"
-                      name="LocationAddressZipCode"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[LocationPhone]"
-                      dataType="ui8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[LocationPhone]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[LocationPhone]"
-                      name="LocationPhone"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[LocationParking]"
-                      dataType="bool"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[LocationParking]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[LocationParking]"
-                      name="LocationParking"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[AnalysisWeight]"
-                      dataType="decimal"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[AnalysisWeight]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[AnalysisWeight]"
-                      name="AnalysisWeight"
-                      scale="10"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[AnalysisHeight]"
-                      dataType="ui1"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[AnalysisHeight]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[AnalysisHeight]"
-                      name="AnalysisHeight"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[AnalysisBodyFatPercentage]"
-                      dataType="decimal"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[AnalysisBodyFatPercentage]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[AnalysisBodyFatPercentage]"
-                      name="AnalysisBodyFatPercentage"
-                      scale="10"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[AnalysisLeanMuscleMassPercentage]"
-                      dataType="decimal"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[AnalysisLeanMuscleMassPercentage]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[AnalysisLeanMuscleMassPercentage]"
-                      name="AnalysisLeanMuscleMassPercentage"
-                      scale="10"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[AnalysisBoneMassPercentage]"
-                      dataType="decimal"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[AnalysisBoneMassPercentage]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[AnalysisBoneMassPercentage]"
-                      name="AnalysisBoneMassPercentage"
-                      scale="10"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[AnalysisMetabolicAge]"
-                      dataType="ui1"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[AnalysisMetabolicAge]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[AnalysisMetabolicAge]"
-                      name="AnalysisMetabolicAge"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[AnalysisActivityLevel]"
-                      dataType="ui1"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[AnalysisActivityLevel]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record].Columns[AnalysisActivityLevel]"
-                      name="AnalysisActivityLevel"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientFirstName]"
-                      dataType="wstr"
-                      length="255"
-                      name="PacientFirstName">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientLastName]"
-                      dataType="wstr"
-                      length="255"
-                      name="PacientLastName">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientSSN]"
-                      dataType="wstr"
-                      length="255"
-                      name="PacientSSN">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientBirthDate]"
-                      dataType="wstr"
-                      length="255"
-                      name="PacientBirthDate">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientCountry]"
-                      dataType="wstr"
-                      length="255"
-                      name="PacientCountry">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientCity]"
-                      dataType="wstr"
-                      length="255"
-                      name="PacientCity">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientStreetName]"
-                      dataType="wstr"
-                      length="255"
-                      name="PacientStreetName">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientAddressNr]"
-                      dataType="ui4"
-                      name="PacientAddressNr">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.UInt32</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientAddressZipCode]"
-                      dataType="wstr"
-                      length="255"
-                      name="PacientAddressZipCode">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientEmail]"
-                      dataType="wstr"
-                      length="255"
-                      name="PacientEmail">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientPhoneNumber]"
-                      dataType="ui8"
-                      name="PacientPhoneNumber">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.UInt64</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientGender]"
-                      dataType="wstr"
-                      length="255"
-                      name="PacientGender">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[PacientJob]"
-                      dataType="wstr"
-                      length="255"
-                      name="PacientJob">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianFirstName]"
-                      dataType="wstr"
-                      length="255"
-                      name="DietitianFirstName">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianLastName]"
-                      dataType="wstr"
-                      length="255"
-                      name="DietitianLastName">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianSSN]"
-                      dataType="wstr"
-                      length="255"
-                      name="DietitianSSN">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianBirthDate]"
-                      dataType="wstr"
-                      length="255"
-                      name="DietitianBirthDate">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianCountry]"
-                      dataType="wstr"
-                      length="255"
-                      name="DietitianCountry">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianCity]"
-                      dataType="wstr"
-                      length="255"
-                      name="DietitianCity">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianStreetName]"
-                      dataType="wstr"
-                      length="255"
-                      name="DietitianStreetName">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianAddressNr]"
-                      dataType="ui4"
-                      name="DietitianAddressNr">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.UInt32</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianAddressZipCode]"
-                      dataType="wstr"
-                      length="255"
-                      name="DietitianAddressZipCode">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianEmail]"
-                      dataType="wstr"
-                      length="255"
-                      name="DietitianEmail">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitanPhoneNr]"
-                      dataType="ui8"
-                      name="DietitanPhoneNr">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.UInt64</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianGender]"
-                      dataType="wstr"
-                      length="255"
-                      name="DietitianGender">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianActivityStartDate]"
-                      dataType="wstr"
-                      length="255"
-                      name="DietitianActivityStartDate">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianTitle]"
-                      dataType="wstr"
-                      length="255"
-                      name="DietitianTitle">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[DietitianExperienceYears]"
-                      dataType="ui1"
-                      name="DietitianExperienceYears">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.Byte</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[LocationAddressCountry]"
-                      dataType="wstr"
-                      length="255"
-                      name="LocationAddressCountry">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[LocationAddressCity]"
-                      dataType="wstr"
-                      length="255"
-                      name="LocationAddressCity">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[LocationAddressStreet]"
-                      dataType="wstr"
-                      length="255"
-                      name="LocationAddressStreet">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[LocationAddressNr]"
-                      dataType="ui4"
-                      name="LocationAddressNr">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.UInt32</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[LocationAddressZipCode]"
-                      dataType="wstr"
-                      length="255"
-                      name="LocationAddressZipCode">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.String</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[LocationPhone]"
-                      dataType="ui8"
-                      name="LocationPhone">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.UInt64</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[LocationParking]"
-                      dataType="bool"
-                      name="LocationParking">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.Boolean</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[AnalysisWeight]"
-                      dataType="decimal"
-                      name="AnalysisWeight"
-                      scale="10">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.Decimal</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[AnalysisHeight]"
-                      dataType="ui1"
-                      name="AnalysisHeight">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.Byte</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[AnalysisBodyFatPercentage]"
-                      dataType="decimal"
-                      name="AnalysisBodyFatPercentage"
-                      scale="10">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.Decimal</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[AnalysisLeanMuscleMassPercentage]"
-                      dataType="decimal"
-                      name="AnalysisLeanMuscleMassPercentage"
-                      scale="10">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.Decimal</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[AnalysisBoneMassPercentage]"
-                      dataType="decimal"
-                      name="AnalysisBoneMassPercentage"
-                      scale="10">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.Decimal</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[AnalysisMetabolicAge]"
-                      dataType="ui1"
-                      name="AnalysisMetabolicAge">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.Byte</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record].ExternalColumns[AnalysisActivityLevel]"
-                      dataType="ui1"
-                      name="AnalysisActivityLevel">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          name="CLRType">System.Byte</property>
-                      </properties>
-                    </externalMetadataColumn>
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output]"
-                  isErrorOut="true"
-                  name="record Error Output">
-                  <properties>
-                    <property
-                      dataType="System.String"
-                      description="Identifies the rowset associated with the output."
-                      name="RowsetID">record</property>
-                  </properties>
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientFirstName]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientFirstName]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientFirstName]"
-                      name="PacientFirstName" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientLastName]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientLastName]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientLastName]"
-                      name="PacientLastName" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientSSN]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientSSN]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientSSN]"
-                      name="PacientSSN" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientBirthDate]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientBirthDate]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientBirthDate]"
-                      name="PacientBirthDate" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientCountry]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientCountry]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientCountry]"
-                      name="PacientCountry" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientCity]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientCity]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientCity]"
-                      name="PacientCity" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientStreetName]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientStreetName]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientStreetName]"
-                      name="PacientStreetName" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientAddressNr]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientAddressNr]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientAddressNr]"
-                      name="PacientAddressNr" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientAddressZipCode]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientAddressZipCode]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientAddressZipCode]"
-                      name="PacientAddressZipCode" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientEmail]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientEmail]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientEmail]"
-                      name="PacientEmail" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientPhoneNumber]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientPhoneNumber]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientPhoneNumber]"
-                      name="PacientPhoneNumber" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientGender]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientGender]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientGender]"
-                      name="PacientGender" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientJob]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientJob]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[PacientJob]"
-                      name="PacientJob" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianFirstName]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianFirstName]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianFirstName]"
-                      name="DietitianFirstName" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianLastName]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianLastName]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianLastName]"
-                      name="DietitianLastName" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianSSN]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianSSN]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianSSN]"
-                      name="DietitianSSN" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianBirthDate]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianBirthDate]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianBirthDate]"
-                      name="DietitianBirthDate" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianCountry]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianCountry]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianCountry]"
-                      name="DietitianCountry" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianCity]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianCity]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianCity]"
-                      name="DietitianCity" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianStreetName]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianStreetName]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianStreetName]"
-                      name="DietitianStreetName" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianAddressNr]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianAddressNr]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianAddressNr]"
-                      name="DietitianAddressNr" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianAddressZipCode]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianAddressZipCode]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianAddressZipCode]"
-                      name="DietitianAddressZipCode" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianEmail]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianEmail]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianEmail]"
-                      name="DietitianEmail" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitanPhoneNr]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitanPhoneNr]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitanPhoneNr]"
-                      name="DietitanPhoneNr" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianGender]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianGender]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianGender]"
-                      name="DietitianGender" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianActivityStartDate]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianActivityStartDate]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianActivityStartDate]"
-                      name="DietitianActivityStartDate" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianTitle]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianTitle]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianTitle]"
-                      name="DietitianTitle" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianExperienceYears]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianExperienceYears]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[DietitianExperienceYears]"
-                      name="DietitianExperienceYears" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[LocationAddressCountry]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[LocationAddressCountry]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[LocationAddressCountry]"
-                      name="LocationAddressCountry" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[LocationAddressCity]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[LocationAddressCity]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[LocationAddressCity]"
-                      name="LocationAddressCity" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[LocationAddressStreet]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[LocationAddressStreet]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[LocationAddressStreet]"
-                      name="LocationAddressStreet" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[LocationAddressNr]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[LocationAddressNr]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[LocationAddressNr]"
-                      name="LocationAddressNr" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[LocationAddressZipCode]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[LocationAddressZipCode]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[LocationAddressZipCode]"
-                      name="LocationAddressZipCode" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[LocationPhone]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[LocationPhone]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[LocationPhone]"
-                      name="LocationPhone" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[LocationParking]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[LocationParking]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[LocationParking]"
-                      name="LocationParking" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[AnalysisWeight]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[AnalysisWeight]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[AnalysisWeight]"
-                      name="AnalysisWeight" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[AnalysisHeight]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[AnalysisHeight]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[AnalysisHeight]"
-                      name="AnalysisHeight" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[AnalysisBodyFatPercentage]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[AnalysisBodyFatPercentage]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[AnalysisBodyFatPercentage]"
-                      name="AnalysisBodyFatPercentage" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[AnalysisLeanMuscleMassPercentage]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[AnalysisLeanMuscleMassPercentage]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[AnalysisLeanMuscleMassPercentage]"
-                      name="AnalysisLeanMuscleMassPercentage" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[AnalysisBoneMassPercentage]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[AnalysisBoneMassPercentage]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[AnalysisBoneMassPercentage]"
-                      name="AnalysisBoneMassPercentage" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[AnalysisMetabolicAge]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[AnalysisMetabolicAge]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[AnalysisMetabolicAge]"
-                      name="AnalysisMetabolicAge" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[AnalysisActivityLevel]"
-                      dataType="nText"
-                      externalMetadataColumnId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[AnalysisActivityLevel]"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[AnalysisActivityLevel]"
-                      name="AnalysisActivityLevel" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientFirstName]"
-                      dataType="nText"
-                      name="PacientFirstName" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientLastName]"
-                      dataType="nText"
-                      name="PacientLastName" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientSSN]"
-                      dataType="nText"
-                      name="PacientSSN" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientBirthDate]"
-                      dataType="nText"
-                      name="PacientBirthDate" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientCountry]"
-                      dataType="nText"
-                      name="PacientCountry" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientCity]"
-                      dataType="nText"
-                      name="PacientCity" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientStreetName]"
-                      dataType="nText"
-                      name="PacientStreetName" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientAddressNr]"
-                      dataType="nText"
-                      name="PacientAddressNr" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientAddressZipCode]"
-                      dataType="nText"
-                      name="PacientAddressZipCode" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientEmail]"
-                      dataType="nText"
-                      name="PacientEmail" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientPhoneNumber]"
-                      dataType="nText"
-                      name="PacientPhoneNumber" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientGender]"
-                      dataType="nText"
-                      name="PacientGender" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[PacientJob]"
-                      dataType="nText"
-                      name="PacientJob" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianFirstName]"
-                      dataType="nText"
-                      name="DietitianFirstName" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianLastName]"
-                      dataType="nText"
-                      name="DietitianLastName" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianSSN]"
-                      dataType="nText"
-                      name="DietitianSSN" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianBirthDate]"
-                      dataType="nText"
-                      name="DietitianBirthDate" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianCountry]"
-                      dataType="nText"
-                      name="DietitianCountry" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianCity]"
-                      dataType="nText"
-                      name="DietitianCity" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianStreetName]"
-                      dataType="nText"
-                      name="DietitianStreetName" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianAddressNr]"
-                      dataType="nText"
-                      name="DietitianAddressNr" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianAddressZipCode]"
-                      dataType="nText"
-                      name="DietitianAddressZipCode" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianEmail]"
-                      dataType="nText"
-                      name="DietitianEmail" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitanPhoneNr]"
-                      dataType="nText"
-                      name="DietitanPhoneNr" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianGender]"
-                      dataType="nText"
-                      name="DietitianGender" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianActivityStartDate]"
-                      dataType="nText"
-                      name="DietitianActivityStartDate" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianTitle]"
-                      dataType="nText"
-                      name="DietitianTitle" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[DietitianExperienceYears]"
-                      dataType="nText"
-                      name="DietitianExperienceYears" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[LocationAddressCountry]"
-                      dataType="nText"
-                      name="LocationAddressCountry" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[LocationAddressCity]"
-                      dataType="nText"
-                      name="LocationAddressCity" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[LocationAddressStreet]"
-                      dataType="nText"
-                      name="LocationAddressStreet" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[LocationAddressNr]"
-                      dataType="nText"
-                      name="LocationAddressNr" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[LocationAddressZipCode]"
-                      dataType="nText"
-                      name="LocationAddressZipCode" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[LocationPhone]"
-                      dataType="nText"
-                      name="LocationPhone" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[LocationParking]"
-                      dataType="nText"
-                      name="LocationParking" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[AnalysisWeight]"
-                      dataType="nText"
-                      name="AnalysisWeight" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[AnalysisHeight]"
-                      dataType="nText"
-                      name="AnalysisHeight" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[AnalysisBodyFatPercentage]"
-                      dataType="nText"
-                      name="AnalysisBodyFatPercentage" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[AnalysisLeanMuscleMassPercentage]"
-                      dataType="nText"
-                      name="AnalysisLeanMuscleMassPercentage" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[AnalysisBoneMassPercentage]"
-                      dataType="nText"
-                      name="AnalysisBoneMassPercentage" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[AnalysisMetabolicAge]"
-                      dataType="nText"
-                      name="AnalysisMetabolicAge" />
-                    <externalMetadataColumn
-                      refId="Package\Create fact table Analysiss\XML Source.Outputs[record Error Output].ExternalColumns[AnalysisActivityLevel]"
-                      dataType="nText"
-                      name="AnalysisActivityLevel" />
-                  </externalMetadataColumns>
-                </output>
-              </outputs>
-            </component>
-          </components>
-          <paths>
-            <path
-              refId="Package\Create fact table Analysiss.Paths[record]"
-              endId="Package\Create fact table Analysiss\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="record"
-              startId="Package\Create fact table Analysiss\XML Source.Outputs[record]" />
-          </paths>
-        </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
       DTS:refId="Package\Create Patient table"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
@@ -6176,7 +4575,6 @@
       DTS:refId="Package\Create Plan Dimension"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{E89C3074-2D38-41A0-AD14-04775CB0D991}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -35050,14 +33448,6 @@ where [refTable].[BuissnessId] = ?</property>
       DTS:ObjectName="Constraint 12"
       DTS:To="Package\Populate Results" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 13]"
-      DTS:CreationName=""
-      DTS:DTSID="{472252BD-558E-4CE1-9163-CFF631BB4BCE}"
-      DTS:From="Package\Generate Date Dim"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 13"
-      DTS:To="Package\Create fact table Analysiss" />
-    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
       DTS:DTSID="{66464197-56EE-4C60-AE86-26561BB5478F}"
@@ -35068,34 +33458,34 @@ where [refTable].[BuissnessId] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{6C334A76-96C4-42C2-BFEE-D6D3B3330445}"
+      DTS:DTSID="{167155CD-8E03-4A46-834F-C80AE82BE46E}"
       DTS:From="Package\Create Slowly Changing"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
-      DTS:To="Package\Create fact table Analysiss" />
+      DTS:To="Package\Populate Analysis" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{BCB88DC5-7ADE-441E-A03F-01AAA793982B}"
+      DTS:DTSID="{93460F98-148D-4207-9378-38EFC6C94BA6}"
       DTS:From="Package\Create Slowly Canging"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
-      DTS:To="Package\Create fact table Analysiss" />
+      DTS:To="Package\Populate Analysis" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{ACD6CA82-9754-433B-8C6E-0E32A9DD7D7C}"
+      DTS:DTSID="{7CFA5EED-9599-4934-ACE1-E0574B274535}"
       DTS:From="Package\Slowly Changing"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
-      DTS:To="Package\Create fact table Analysiss" />
+      DTS:To="Package\Populate Analysis" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:CreationName=""
-      DTS:DTSID="{94F45639-DAA7-4F28-A47C-28A5433BF4F0}"
-      DTS:From="Package\Create fact table Analysiss"
+      DTS:DTSID="{18092708-CBD2-406D-940D-985A69E630C6}"
+      DTS:From="Package\Generate Date Dim"
       DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 7"
+      DTS:ObjectName="Constraint 6"
       DTS:To="Package\Populate Analysis" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
@@ -35121,15 +33511,11 @@ where [refTable].[BuissnessId] = ?</property>
         <NodeLayout
           Size="141,42"
           Id="Package\Create Date Dimension"
-          TopLeft="1263,147" />
+          TopLeft="1261,103" />
         <NodeLayout
           Size="178,42"
           Id="Package\Create Dietitian table"
           TopLeft="477,101" />
-        <NodeLayout
-          Size="203,42"
-          Id="Package\Create fact table Analysiss"
-          TopLeft="656,436" />
         <NodeLayout
           Size="172,42"
           Id="Package\Create Patient table"
@@ -35137,15 +33523,15 @@ where [refTable].[BuissnessId] = ?</property>
         <NodeLayout
           Size="185,42"
           Id="Package\Create Plan Dimension"
-          TopLeft="1443,149" />
+          TopLeft="1447,102" />
         <NodeLayout
           Size="184,42"
           Id="Package\Create Slowly Canging"
-          TopLeft="476,195" />
+          TopLeft="475,205" />
         <NodeLayout
           Size="190,42"
           Id="Package\Create Slowly Changing"
-          TopLeft="162,194" />
+          TopLeft="161,203" />
         <NodeLayout
           Size="181,42"
           Id="Package\Create Table Location"
@@ -35153,29 +33539,29 @@ where [refTable].[BuissnessId] = ?</property>
         <NodeLayout
           Size="161,42"
           Id="Package\Populate Analysis"
-          TopLeft="677,533" />
+          TopLeft="698,522" />
         <NodeLayout
           Size="157,42"
           Id="Package\Populate Results"
-          TopLeft="1266,529" />
+          TopLeft="1267,534" />
         <NodeLayout
           Size="156,42"
           Id="Package\Slowly Changing"
-          TopLeft="795,202" />
+          TopLeft="795,204" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="258,138">
+          TopLeft="257.5,138">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56"
+              EndConnector="0,65"
               Start="0,0"
-              End="0,48.5">
+              End="0,57.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.5" />
+                    End="0,57.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -35186,18 +33572,18 @@ where [refTable].[BuissnessId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="567,143">
+          TopLeft="566.5,143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,52"
+              EndConnector="0,62"
               Start="0,0"
-              End="0,44.5">
+              End="0,54.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.5" />
+                    End="0,54.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -35208,30 +33594,30 @@ where [refTable].[BuissnessId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="287.333333333333,236">
+          TopLeft="286.333333333333,245">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="1012.46666666667,293"
+              EndConnector="1014.46666666667,289"
               Start="0,0"
-              End="1012.46666666667,285.5">
+              End="1014.46666666667,281.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,175.474579679833" />
+                    End="0,173.024414769528" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,175.474579679833"
-                    Point2="0,179.474579679833"
-                    Point3="4,179.474579679833" />
+                    Point1="0,173.024414769528"
+                    Point2="0,177.024414769528"
+                    Point3="4,177.024414769528" />
                   <mssgle:LineSegment
-                    End="1008.46666666667,179.474579679833" />
+                    End="1010.46666666667,177.024414769528" />
                   <mssgle:CubicBezierSegment
-                    Point1="1008.46666666667,179.474579679833"
-                    Point2="1012.46666666667,179.474579679833"
-                    Point3="1012.46666666667,183.474579679833" />
+                    Point1="1010.46666666667,177.024414769528"
+                    Point2="1014.46666666667,177.024414769528"
+                    Point3="1014.46666666667,181.024414769528" />
                   <mssgle:LineSegment
-                    End="1012.46666666667,285.5" />
+                    End="1014.46666666667,281.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -35242,30 +33628,30 @@ where [refTable].[BuissnessId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 11]"
-          TopLeft="597.333333333333,237">
+          TopLeft="596.333333333333,247">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="732.266666666667,292"
+              EndConnector="734.266666666667,287"
               Start="0,0"
-              End="732.266666666667,284.5">
+              End="734.266666666667,279.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,129.368078337192" />
+                    End="0,127.084378365664" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,129.368078337192"
-                    Point2="0,133.368078337192"
-                    Point3="4,133.368078337192" />
+                    Point1="0,127.084378365664"
+                    Point2="0,131.084378365664"
+                    Point3="4,131.084378365664" />
                   <mssgle:LineSegment
-                    End="728.266666666667,133.368078337192" />
+                    End="730.266666666667,131.084378365664" />
                   <mssgle:CubicBezierSegment
-                    Point1="728.266666666667,133.368078337192"
-                    Point2="732.266666666667,133.368078337192"
-                    Point3="732.266666666667,137.368078337192" />
+                    Point1="730.266666666667,131.084378365664"
+                    Point2="734.266666666667,131.084378365664"
+                    Point3="734.266666666667,135.084378365664" />
                   <mssgle:LineSegment
-                    End="732.266666666667,284.5" />
+                    End="734.266666666667,279.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -35280,138 +33666,14 @@ where [refTable].[BuissnessId] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,57"
+              EndConnector="0,59"
               Start="0,0"
-              End="0,49.5">
+              End="0,51.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="257,236">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="442,200"
-              Start="0,0"
-              End="442,192.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,136.484429065744" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,136.484429065744"
-                    Point2="0,140.484429065744"
-                    Point3="4,140.484429065744" />
-                  <mssgle:LineSegment
-                    End="438,140.484429065744" />
-                  <mssgle:CubicBezierSegment
-                    Point1="438,140.484429065744"
-                    Point2="442,140.484429065744"
-                    Point3="442,144.484429065744" />
-                  <mssgle:LineSegment
-                    End="442,192.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="568,237">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="170,199"
-              Start="0,0"
-              End="170,191.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,106.073569482289" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,106.073569482289"
-                    Point2="0,110.073569482289"
-                    Point3="4,110.073569482289" />
-                  <mssgle:LineSegment
-                    End="166,110.073569482289" />
-                  <mssgle:CubicBezierSegment
-                    Point1="166,110.073569482289"
-                    Point2="170,110.073569482289"
-                    Point3="170,114.073569482289" />
-                  <mssgle:LineSegment
-                    End="170,191.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="873,244">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-96,192"
-              Start="0,0"
-              End="-96,184.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,102.201634877384" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,102.201634877384"
-                    Point2="0,106.201634877384"
-                    Point3="-4,106.201634877384" />
-                  <mssgle:LineSegment
-                    End="-92,106.201634877384" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-92,106.201634877384"
-                    Point2="-96,106.201634877384"
-                    Point3="-96,110.201634877384" />
-                  <mssgle:LineSegment
-                    End="-96,184.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="757.5,478">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,55"
-              Start="0,0"
-              End="0,47.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.5" />
+                    End="0,51.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -35422,30 +33684,30 @@ where [refTable].[BuissnessId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="1535.5,191">
+          TopLeft="1539.5,144">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-146.3,338"
+              EndConnector="-149.3,390"
               Start="0,0"
-              End="-146.3,330.5">
+              End="-149.3,382.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,232.26892252894" />
+                    End="0,268.617987533393" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,232.26892252894"
-                    Point2="0,236.26892252894"
-                    Point3="-4,236.26892252894" />
+                    Point1="0,268.617987533393"
+                    Point2="0,272.617987533393"
+                    Point3="-4,272.617987533393" />
                   <mssgle:LineSegment
-                    End="-142.3,236.26892252894" />
+                    End="-145.3,272.617987533393" />
                   <mssgle:CubicBezierSegment
-                    Point1="-142.3,236.26892252894"
-                    Point2="-146.3,236.26892252894"
-                    Point3="-146.3,240.26892252894" />
+                    Point1="-145.3,272.617987533393"
+                    Point2="-149.3,272.617987533393"
+                    Point3="-149.3,276.617987533393" />
                   <mssgle:LineSegment
-                    End="-146.3,330.5" />
+                    End="-149.3,382.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -35457,33 +33719,33 @@ where [refTable].[BuissnessId] = ?</property>
         <NodeLayout
           Size="169,42"
           Id="Package\Generate Date Dim"
-          TopLeft="1044,146" />
+          TopLeft="1030,102" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 12]"
-          TopLeft="1155.33333333333,188">
+          TopLeft="1141.33333333333,144">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="204.066666666667,341"
+              EndConnector="219.066666666667,390"
               Start="0,0"
-              End="204.066666666667,333.5">
+              End="219.066666666667,382.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,151.907986035128" />
+                    End="0,174.311186374486" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,151.907986035128"
-                    Point2="0,155.907986035128"
-                    Point3="4,155.907986035128" />
+                    Point1="0,174.311186374486"
+                    Point2="0,178.311186374486"
+                    Point3="4,178.311186374486" />
                   <mssgle:LineSegment
-                    End="200.066666666667,155.907986035128" />
+                    End="215.066666666667,178.311186374486" />
                   <mssgle:CubicBezierSegment
-                    Point1="200.066666666667,155.907986035128"
-                    Point2="204.066666666667,155.907986035128"
-                    Point3="204.066666666667,159.907986035128" />
+                    Point1="215.066666666667,178.311186374486"
+                    Point2="219.066666666667,178.311186374486"
+                    Point3="219.066666666667,182.311186374486" />
                   <mssgle:LineSegment
-                    End="204.066666666667,333.5" />
+                    End="219.066666666667,382.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -35493,31 +33755,133 @@ where [refTable].[BuissnessId] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 13]"
-          TopLeft="1101.66666666667,188">
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="225.666666666667,245">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-285.666666666667,248"
+              EndConnector="506.933333333333,277"
               Start="0,0"
-              End="-285.666666666667,240.5">
+              End="506.933333333333,269.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,149.013211524947" />
+                    End="0,165.78997566528" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,149.013211524947"
-                    Point2="0,153.013211524947"
-                    Point3="-4,153.013211524947" />
+                    Point1="0,165.78997566528"
+                    Point2="0,169.78997566528"
+                    Point3="4,169.78997566528" />
                   <mssgle:LineSegment
-                    End="-281.666666666667,153.013211524947" />
+                    End="502.933333333333,169.78997566528" />
                   <mssgle:CubicBezierSegment
-                    Point1="-281.666666666667,153.013211524947"
-                    Point2="-285.666666666667,153.013211524947"
-                    Point3="-285.666666666667,157.013211524947" />
+                    Point1="502.933333333333,169.78997566528"
+                    Point2="506.933333333333,169.78997566528"
+                    Point3="506.933333333333,173.78997566528" />
                   <mssgle:LineSegment
-                    End="-285.666666666667,240.5" />
+                    End="506.933333333333,269.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="537.666666666667,247">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="225.533333333333,275"
+              Start="0,0"
+              End="225.533333333333,267.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,121.624826437101" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,121.624826437101"
+                    Point2="0,125.624826437101"
+                    Point3="4,125.624826437101" />
+                  <mssgle:LineSegment
+                    End="221.533333333333,125.624826437101" />
+                  <mssgle:CubicBezierSegment
+                    Point1="221.533333333333,125.624826437101"
+                    Point2="225.533333333333,125.624826437101"
+                    Point3="225.533333333333,129.624826437101" />
+                  <mssgle:LineSegment
+                    End="225.533333333333,267.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="873,246">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-79.2,276"
+              Start="0,0"
+              End="-79.2,268.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,148.491420727522" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,148.491420727522"
+                    Point2="0,152.491420727522"
+                    Point3="-4,152.491420727522" />
+                  <mssgle:LineSegment
+                    End="-75.2,152.491420727522" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-75.2,152.491420727522"
+                    Point2="-79.2,152.491420727522"
+                    Point3="-79.2,156.491420727522" />
+                  <mssgle:LineSegment
+                    End="-79.2,268.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="1087.66666666667,144">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-263.266666666667,378"
+              Start="0,0"
+              End="-263.266666666667,370.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,227.928353658537" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,227.928353658537"
+                    Point2="0,231.928353658537"
+                    Point3="-4,231.928353658537" />
+                  <mssgle:LineSegment
+                    End="-259.266666666667,231.928353658537" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-259.266666666667,231.928353658537"
+                    Point2="-263.266666666667,231.928353658537"
+                    Point3="-263.266666666667,235.928353658537" />
+                  <mssgle:LineSegment
+                    End="-263.266666666667,370.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -35703,57 +34067,6 @@ where [refTable].[BuissnessId] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Create fact table Analysiss">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="134,42"
-          Id="Package\Create fact table Analysiss\XML Source"
-          TopLeft="806,92" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Create fact table Analysiss\OLE DB Destination"
-          TopLeft="793,285" />
-        <EdgeLayout
-          Id="Package\Create fact table Analysiss.Paths[record]"
-          TopLeft="875.75,134">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,151"
-              Start="0,0"
-              End="0,143.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,143.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Create fact table Analysiss\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\Create Patient table">
     <LayoutInfo>
       <GraphLayout
@@ -35860,7 +34173,7 @@ where [refTable].[BuissnessId] = ?</property>
     design-time-name="Package\Create Plan Dimension">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="117,42"
           Id="Package\Create Plan Dimension\DimPlan"
@@ -35904,9 +34217,7 @@ where [refTable].[BuissnessId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -35928,9 +34239,7 @@ where [refTable].[BuissnessId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -35952,9 +34261,7 @@ where [refTable].[BuissnessId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -35976,9 +34283,7 @@ where [refTable].[BuissnessId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -36000,9 +34305,7 @@ where [refTable].[BuissnessId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -37185,45 +35488,45 @@ where [refTable].[BuissnessId] = ?</property>
         <NodeLayout
           Size="141,42"
           Id="Package\Populate Analysis\Add measure"
-          TopLeft="874,621" />
+          TopLeft="873,629" />
         <EdgeLayout
           Id="Package\Populate Analysis.Paths[Lookup Match Output3]"
-          TopLeft="945,588">
+          TopLeft="944.5,588">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33"
+              EndConnector="0,41"
               Start="0,0"
-              End="0,25.5">
+              End="0,33.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.5" />
+                    End="0,33.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,6.9453125,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,10.9453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Populate Analysis.Paths[Derived Column Output]"
-          TopLeft="943.5,663">
+          TopLeft="943,671">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56"
+              EndConnector="0,48"
               Start="0,0"
-              End="0,48.5">
+              End="0,40.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.5" />
+                    End="0,40.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
